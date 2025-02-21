@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #ff00ff, #8000ff);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: 400% 400%;
+  animation: gradientBackground 10s ease infinite;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  background: linear-gradient(135deg, #ff0099, #6a00ff);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  z-index: 1000;
+  border-radius: 0px;
+  justify-content: space-between;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo a:hover {
+  transform: scale(1.1);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s, text-shadow 0.3s;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile img:hover {
+  transform: scale(1.1);
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #ff00ff;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  .menu-checkbox:checked + .menu-icon + .nav {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .profile {
+    display: none;
+  }
+}
+
+section {
+  padding: 40px;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 80px;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #ff00ff;
+}
+
+footer {
+  background: linear-gradient(135deg, #ff0099, #6a00ff);
+  padding: 30px 0;
+  color: white;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-name p {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-link {
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-link:hover {
+  color: #ff00ff;
+}
+
+footer i {
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+footer i:hover {
+  color: #ff00ff;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+}
