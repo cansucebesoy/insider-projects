@@ -165,20 +165,112 @@ body {
   }
 }
 
-section {
+.summary-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   padding: 40px;
-  margin: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 80px;
 }
 
-section h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #ff00ff;
+.main-photo {
+  flex: 3;
+}
+
+.main-photo img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.summary-text {
+  flex: 3;
+  text-align: center;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: none;
+  white-space: pre-line;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+#characters {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters-section {
+  display: flex;
+  gap: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background-color: #2c2c2c;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  flex-direction: column;
+}
+
+.name {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.name-title {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 footer {
@@ -244,4 +336,139 @@ footer i:hover {
   .footer-links {
     flex-direction: column;
   }
+}
+
+#characters {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.character-title {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.character-title h2:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin-bottom: 20px;
+  flex: 1 1 calc(33.33% - 20px);
+  box-sizing: border-box;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff0099, #6a00ff);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .card-container {
+    justify-content: flex-start;
+  }
+
+  .summary-section {
+    flex-direction: column;
+  }
+}
+
+.fav-episodes-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.video-container {
+  padding-right: 40px;
+  padding-left: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

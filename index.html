@@ -8,6 +8,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <title>The Office</title>
   </head>
@@ -19,6 +23,7 @@
       <label for="menu-toggle" class="menu-icon">☰</label>
       <nav class="nav">
         <ul class="nav-links">
+          <li><a href="https://www.imdb.com/title/tt0386676/">IMDB</a></li>
           <li><a href="#summary">Summary</a></li>
           <li><a href="#characters">Characters</a></li>
           <li><a href="#fav-episodes">Fav Episodes</a></li>
@@ -30,19 +35,89 @@
     </header>
 
     <section id="summary">
-      <h2>Summary</h2>
-      <p>The Office is a mockumentary sitcom...</p>
+      <div class="summary-section">
+        <div class="main-photo">
+          <img src="photos/office-main-photo.webp" alt="" />
+        </div>
+        <div class="summary-text">
+          <p id="animated-text"></p>
+        </div>
+      </div>
     </section>
 
     <section id="characters">
-      <h2>Characters</h2>
-      <p>Here are the main characters...</p>
+      <div class="characters-section">
+        <div class="character-title"><h2>FAV CHARACTERS</h2></div>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="photos/Stickers for Sale (1).jpeg"
+                  alt="Character 1"
+                />
+              </div>
+              <div class="card-back">
+                <h3 class="name-title">Micheal Scott</h3>
+                <p class="name">
+                  Creative and dedicated, Michela is always looking for new
+                  challenges and inspiring others with her enthusiasm.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="photos/Stickers for Sale.jpeg" alt="Character 2" />
+              </div>
+              <div class="card-back">
+                <h3 class="name-title">James Halpert</h3>
+                <p class="name">
+                  Charming and witty, Jim is laid-back, with a great sense of
+                  humor and a knack for bringing calm to chaos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="photos/Stickers for Sale (2).jpeg"
+                  alt="Character 3"
+                />
+              </div>
+              <div class="card-back">
+                <h3 class="name-title">Dwight Schrute</h3>
+                <p class="name">
+                  Ambitious and eccentric, Dwight values efficiency and loyalty,
+                  often standing out for his unique approach.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="fav-episodes">
-      <h2>Fav Episodes</h2>
-      <p>Some of the best episodes are...</p>
+      <div class="fav-episodes-section"></div>
+      <div class="video-title"><h2>FAV SCENES</h2></div>
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/jaXoWVZN2lc?si=L2XK-ZuBzXej52IZ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
     </section>
+
     <footer>
       <div class="footer-container">
         <div class="footer-name">
@@ -70,5 +145,6 @@
         </div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
