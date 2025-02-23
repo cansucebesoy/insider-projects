@@ -21,3 +21,13 @@ window.addEventListener("load", () => {
   image.classList.add("animate__animated", "animate__bounceIn");
   image.style.opacity = 1;
 });
+
+const heartIcon = document.getElementById("heart-icon");
+
+heartIcon.addEventListener("mouseenter", () => {
+  heartIcon.style.color = "white";
+});
+
+heartIcon.addEventListener("mouseleave", () => {
+  heartIcon.style.color = "#b197fc";
+});
