@@ -8,7 +8,7 @@
 }
 
 .body {
-  font-family: "Poppins, sans-serif";
+  font-family: "Poppins", sans-serif;
   background: black;
   color: #b0b0b0;
   display: flex;
@@ -59,7 +59,6 @@
   color: #b0b0b0;
   outline: none;
   box-shadow: inset 6px 6px 12px #101010, inset -6px -6px 12px #222222;
-
   font-size: 100px;
   text-align: center;
   line-height: 150px;
@@ -77,4 +76,28 @@
   color: #888;
   text-transform: uppercase;
   text-align: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+  padding-top: 50px;
+}
+
+.buttons button {
+  background: #181818;
+  border: solid 2px #242424;
+  color: #b0b0b0;
+  width: 80px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.buttons button:hover {
+  background: #242424;
+  color: #ffffff;
+  border-color: #2e2e2e;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
