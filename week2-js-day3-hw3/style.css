@@ -101,3 +101,14 @@
   border-color: #2e2e2e;
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 32px;
+  }
+  .time-boxes input {
+    width: 120px;
+    height: 100px;
+    font-size: 40px;
+  }
+}
