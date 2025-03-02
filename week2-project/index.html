@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Task Management Application</h1>
+      </header>
+
+      <main>
+        <section class="task-form-container">
+          <div class="card">
+            <div class="card-header">
+              <h2>Add New Task</h2>
+            </div>
+            <div class="card-body">
+              <form id="taskForm">
+                <div class="form-group">
+                  <label for="taskTitle"
+                    >Title <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="taskTitle"
+                    class="input"
+                    placeholder="Enter task title"
+                  />
+                  <div class="error-message" id="titleError"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="taskDescription">Description</label>
+                  <textarea
+                    id="taskDescription"
+                    class="input"
+                    placeholder="Enter task description"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Priority <span class="required">*</span></label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="lowPriority"
+                        name="priority"
+                        value="low"
+                      />
+                      <label for="lowPriority">Low</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="mediumPriority"
+                        name="priority"
+                        value="medium"
+                      />
+                      <label for="mediumPriority">Medium</label>
+                    </div>
+                    <div class="radio-item">
+                      <input
+                        type="radio"
+                        id="highPriority"
+                        name="priority"
+                        value="high"
+                      />
+                      <label for="highPriority">High</label>
+                    </div>
+                  </div>
+                  <div class="error-message" id="priorityError"></div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="button button-primary">
+                    Add
+                  </button>
+                  <button type="reset" class="button button-secondary">
+                    Clear
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="task-list-container">
+          <div class="card">
+            <div class="card-header">
+              <h2>Task List</h2>
+              <div class="filter-controls">
+                <button id="filterCompleted" class="button button-small">
+                  Show Completed Only
+                </button>
+                <button
+                  id="filterAll"
+                  class="button button-small button-secondary"
+                >
+                  Show All
+                </button>
+                <button
+                  id="sortByPriority"
+                  class="button button-small button-secondary"
+                >
+                  Sort by Priority
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="taskList" class="task-list">
+                <div class="empty-state">
+                  <p>No tasks added yet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
