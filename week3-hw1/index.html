@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Student Information</h1>
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>ID</th>
+          <th>Lecture Code</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Add New Student</h3>
+    <input type="text" id="studentName" placeholder="Name" />
+    <input type="text" id="studentLastname" placeholder="Lastname" />
+    <input type="text" id="studentId" placeholder="ID" />
+    <input type="text" id="studentLectureCode" placeholder="Lecture Code" />
+    <input type="number" id="studentNote" placeholder="Note" />
+    <button id="addStudent">Add Student</button>
+
+    <h3>Delete Student</h3>
+    <input type="text" id="deleteStudentId" placeholder="ID" />
+    <button id="deleteStudent">Delete Student</button>
+    <script src="script.js"></script>
+  </body>
+</html>
