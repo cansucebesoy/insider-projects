@@ -1,14 +1,26 @@
 let filteredProducts = [];
 let originalProducts = [];
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
 export function initializeFilters(products) {
   console.log("Ürünler:", products);
   originalProducts = [...products];
   filteredProducts = [...products];
-
+  const debouncedApplyFilters = debounce(applyFilters, 500);
   $("#searchButton").on("click", applyFilters);
   $("#searchInput").on("keyup", (e) => {
     if (e.key === "Enter") {
       applyFilters();
+    } else {
+      debouncedApplyFilters();
     }
   });
 

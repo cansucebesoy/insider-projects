@@ -1,15 +1,26 @@
+import $ from "jquery";
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-console.log("Başlangıçtaki sepet verisi:", cart);
+cart = cart.filter((item) => item !== null && item !== undefined);
+
+saveCart();
 
 export function addToCart(product) {
-  cart.push(product);
-  saveCart();
-  updateCartCount();
+  if (product) {
+    cart.push(product);
+    saveCart();
+    updateCartCount();
+  }
 }
 
 function updateCartCount() {
-  $("#cartCount").text(cart.length);
-  console.log("Güncel sepet sayısı:", cart.length);
+  if (cart.length > 0) {
+    $("#cartCount").text(cart.length).show();
+    console.log("Güncel sepet sayısı:", cart.length);
+  } else {
+    $("#cartCount").hide();
+    console.log("Sepet boş, count gizlendi.");
+  }
 }
 
 function saveCart() {
@@ -19,6 +30,13 @@ function saveCart() {
 
 function displayCart() {
   $("#cartList").empty();
+
+  if (cart.length === 0) {
+    $("#cartList").append(
+      "<div class='empty-cart-message'>Sepetiniz boş</div>"
+    );
+    return;
+  }
 
   cart.forEach((item, index) => {
     if (item && item.image && item.title && item.price) {
@@ -39,7 +57,7 @@ function displayCart() {
   console.log("Sepet içeriği görüntülendi:", cart);
 }
 
-$("#cartBtn").on("click", function () {
+$(document).on("click", "#cartButton", () => {
   console.log("Sepet modalı açıldı.");
   $("#cartModal").show();
   displayCart();
@@ -54,9 +72,7 @@ $(document).on("click", ".cart-btn", function () {
     price: productCard.find(".product-price").text(),
   };
 
-  cart.push(product);
-  saveCart();
-  updateCartCount();
+  addToCart(product);
   console.log("Ürün sepete eklendi:", product);
 });
 
@@ -64,23 +80,28 @@ $(document).on("click", ".remove-from-cart", function () {
   const index = $(this).data("index");
   console.log("Sepetten çıkarılacak ürün indexi:", index);
 
-  cart.splice(index, 1);
-  saveCart();
-  updateCartCount();
-  displayCart();
-  console.log("Ürün sepetten çıkarıldı.");
+  if (index >= 0 && index < cart.length) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCartCount();
+    displayCart();
+    console.log("Ürün sepetten çıkarıldı.");
+  }
 });
 
-$("#clearCartBtn").on("click", function () {
+$("#clearCartBtn").on("click", () => {
   cart = [];
   saveCart();
   updateCartCount();
   displayCart();
   console.log("Sepet tamamen temizlendi.");
 });
-$("#cartCloseBtn").on("click", function () {
+
+$("#cartCloseBtn").on("click", () => {
   console.log("Sepet modalı kapatıldı.");
   $("#cartModal").hide();
 });
 
 updateCartCount();
+
+export { cart };

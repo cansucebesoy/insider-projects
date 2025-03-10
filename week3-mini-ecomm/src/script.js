@@ -10,12 +10,67 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { fetchProducts } from "./ajax.js";
 import { addToFavorites } from "./favorites.js";
 import { addToCart } from "./cart.js";
-import { initializeFilters } from "./filters.js";
 
 $(document).ready(() => {
   initializeSlider();
   fetchProducts();
-
   addToFavorites();
   addToCart();
+  $("#favoriteBtn").hover(
+    function () {
+      $(this).find("i").stop(true, true).slideDown(1000);
+    },
+    function () {
+      $(this).find("i").stop(true, true).slideUp(1000).slideDown(500);
+    }
+  );
+
+  $("#cartButton").hover(
+    function () {
+      $(this).find("i").stop(true, true).slideDown(1000);
+    },
+    function () {
+      $(this).find("i").stop(true, true).slideUp(1000).slideDown(500);
+    }
+  );
+
+  $("#miniText")
+    .css("display", "inline-block")
+    .animate(
+      {
+        left: "+=30px",
+        right: "+=30px",
+      },
+      500,
+      function () {
+        $(this).animate(
+          {
+            left: "-=30px",
+            right: "-=30px",
+          },
+          500
+        );
+      }
+    );
+
+  $("#miniText").hover(
+    function () {
+      $(this).animate(
+        {
+          fontSize: "30px",
+          color: "#ff6600",
+        },
+        200
+      );
+    },
+    function () {
+      $(this).animate(
+        {
+          fontSize: "24px",
+          color: "black",
+        },
+        200
+      );
+    }
+  );
 });
