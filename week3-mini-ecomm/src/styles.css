@@ -315,6 +315,13 @@ body {
 #modalProductTitle {
   font-weight: 700;
 }
+.product-title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
 
 #modalProductPrice {
   font-weight: 700;
@@ -525,6 +532,19 @@ select:focus {
 #cartList {
   padding-left: 0 !important;
 }
+.fav-close-btn,
+.cart-close-btn {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  transition: color 0.3s ease;
+}
 .cart-item {
   display: flex;
   align-items: center;
@@ -553,4 +573,104 @@ select:focus {
   cursor: pointer;
   font-size: 12px;
   border-radius: 3px;
+}
+
+/* Filters Section */
+.filters-section {
+  padding: 1.5rem 0;
+  background-color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Search Input */
+.search-container {
+  display: flex;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+/* Sort Select */
+.sort-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: white;
+  font-family: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.filter-button,
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary);
+  margin-right: 0.5rem;
+}
+
+.filter-button:hover {
+  background-color: #333;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset-button {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.reset-button:hover {
+  background-color: var(--secondary);
 }

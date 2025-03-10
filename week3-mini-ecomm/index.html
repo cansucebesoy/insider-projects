@@ -69,6 +69,41 @@
       </div>
     </section>
 
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-container">
+          <div class="filter-group">
+            <div class="search-container">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Ürün ara..."
+                class="search-input"
+              />
+              <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <select id="sortSelect" class="sort-select">
+              <option value="default">Sıralama</option>
+              <option value="price-asc">Fiyat: Düşükten Yükseğe</option>
+              <option value="price-desc">Fiyat: Yüksekten Düşüğe</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <div class="button-container">
+              <button id="filterButton" class="filter-button">Filtrele</button>
+              <button id="resetButton" class="reset-button">Sıfırla</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="products-section">
       <div class="container">
         <h2>Ürünler</h2>
@@ -138,14 +173,6 @@
                     id="modalProductCategory"
                     class="badge bg-secondary"
                   ></div>
-                </div>
-                <div class="d-flex gap-2 mt-4">
-                  <button class="btn btn-dark">
-                    <i class="fas fa-shopping-cart me-2"></i>
-                  </button>
-                  <button class="btn btn-outline-dark">
-                    <i class="fas fa-heart me-2"></i>
-                  </button>
                 </div>
               </div>
             </div>
