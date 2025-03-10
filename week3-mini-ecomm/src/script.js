@@ -1,4 +1,4 @@
-import { initializeSlider } from "./slider.js";
+import { initSlider } from "./initSlider.js";
 import "./styles.css";
 import $ from "jquery";
 import "slick-carousel";
@@ -12,7 +12,7 @@ import { addToFavorites } from "./favorites.js";
 import { addToCart } from "./cart.js";
 
 $(document).ready(() => {
-  initializeSlider();
+  initSlider();
   fetchProducts();
   addToFavorites();
   addToCart();

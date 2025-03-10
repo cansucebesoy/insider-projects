@@ -1,4 +1,4 @@
-export const initializeSlider = () => {
+export const initSlider = () => {
   $(".slider").slick({
     dots: true,
     infinite: true,
